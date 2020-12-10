@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="#" onsubmit="check()">
+        <Label>Enter your Date of Birth</Label><input type="date" id="date">
+
+        <button>Check</button>
+    </form>
+
+    <p id="result"></p>
+
+
+    <script>
+
+        var date = document.getElementById("date").value;
+        var Birthdate = new Date(date).getTime();
+        var now = new Date().getTime();
+
+        var result = now - Birthdate;
+
+        let month = Math.floor(result/(1000*60*60824*30))
+        let day = Math.floor(result/1000*60*60*24*30)
+        let hour = Math.floor(resut/(1000*60*60))
+        let min = Math.floor(result/(1000*60))
+        let sec = Math.floor(result*1000) 
+
+        document.getElementById('month').innerHTML = month
+        document.getElementById('day').innerHTML = day
+        document.getElementById('hour').innerHTML = hour
+        document.getElementById('min').innerHTML = min
+        document.getElementById('sec').innerHTML = sec
+        document.getElementById('age').innerHTML = "Your age is " + result
+
+
+
+    </script>
+
+
+</body>
+
+</html>
